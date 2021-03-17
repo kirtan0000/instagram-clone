@@ -1,6 +1,6 @@
 ## Instagram Clone
 
-### This is a clone of Instagrams, here are the libraries/frameworks that I used:
+### This is a clone of Instagram, here are the libraries/frameworks that I used:
 
 #### Frontend:
 
