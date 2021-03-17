@@ -1,3 +1,3 @@
 SELECT *
 FROM users
-WHERE refresh = :REFRESH_TOKEN:
+WHERE refresh = ':REFRESH_TOKEN:'

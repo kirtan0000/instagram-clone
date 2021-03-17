@@ -1,1 +1,1 @@
-INSERT INTO post_images(id) VALUES(:ID:)
+INSERT INTO post_images(id) VALUES(':ID:')

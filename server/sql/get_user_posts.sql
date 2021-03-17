@@ -3,4 +3,4 @@ SELECT title,
      id,
      timestamp
 FROM posts
-WHERE author = :USERNAME:
+WHERE author = ':USERNAME:'

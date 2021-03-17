@@ -1,3 +1,3 @@
 SELECT *
 FROM users
-WHERE username = :USERNAME:
+WHERE username = ':USERNAME:'

@@ -3,4 +3,4 @@ SELECT
      jwt,
      refresh
 from users
-WHERE email = :EMAIL:
+WHERE email = ':EMAIL:'

@@ -8,8 +8,8 @@
   width: 57px; /* Class Doesn't Work With This Style */
   height: 57px;
   cursor: pointer;
-  margin-top: -93px;
-  margin-left: 70px;
+  margin-top: -110px !important;
+  margin-left: 70px !important;
 }
 
 #like_post_img_all {
@@ -17,7 +17,7 @@
   width: 51px;
   height: 51px;
   cursor: pointer;
-  top: -10px;
+  top: -20px !important;
 }
 
 .inf-all-post {

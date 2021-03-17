@@ -10,9 +10,9 @@ module.exports = (
   let query = fs
     .readFileSync(path.join(__dirname, `../sql/${file}`))
     .toString()
-    .replace("\n", "");
+
   for (let i = 0; i < what_to_rep.length; i++) {
-    query = query.replace(what_to_rep[i], con.escape(data[i]));
+    query = query.replace(what_to_rep[i], data[i]);
   }
   return query;
 };

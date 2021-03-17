@@ -178,7 +178,7 @@ const SignUp: React.FC = () => {
                         type='submit'
                         className='btn form-control theme-adjust'
                       >
-                        Login
+                        Sign Up
                       </button>
                       <br />
                       <span id='err'>{errorMessage}</span>

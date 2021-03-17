@@ -1,3 +1,3 @@
 SELECT *
 FROM likes
-WHERE post_id = :ID:
+WHERE post_id = ':ID:'

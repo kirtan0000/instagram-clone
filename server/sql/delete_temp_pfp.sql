@@ -1,1 +1,1 @@
-DELETE FROM pfps WHERE id = :ID:
+DELETE FROM pfps WHERE id = ':ID:'

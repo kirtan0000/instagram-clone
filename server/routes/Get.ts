@@ -342,6 +342,7 @@ router.post("/get-post/:id", async (req: Request, res: Response) => {
     });
     return;
   }
+  try {
   postData = postData[0];
   postData.title = Buffer.from(postData.title, "base64").toString();
   postData.image_id = Buffer.from(postData.image_id, "base64").toString();
@@ -350,6 +351,10 @@ router.post("/get-post/:id", async (req: Request, res: Response) => {
   delete postData.image_id;
   postData.id = Buffer.from(postData.id, "base64").toString();
   postData.timestamp = unixToDate(postData.timestamp);
+  } catch(error) {
+    res.json({ success: false, message: "An error occured" });
+    return;
+  }
   const post_likes = await run_query(
     rep([":ID:"], [postData.id], "get_post_likes.sql")
   );

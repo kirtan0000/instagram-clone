@@ -1,1 +1,1 @@
-SELECT from_ FROM followers WHERE to_ = :USERNAME:
+SELECT from_ FROM followers WHERE to_ = ':USERNAME:'

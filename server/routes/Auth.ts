@@ -19,7 +19,7 @@ const {
 } = require("../util/validate");
 
 router.post("/create-user", async (req: Request, res: Response) => {
-  const email = req.body?.email;
+  let email = req.body?.email;
   const password = req.body?.password;
   const name = req.body?.username;
 
@@ -27,6 +27,7 @@ router.post("/create-user", async (req: Request, res: Response) => {
     res.json({ success: false, message: "Missing valid credentials." });
     return;
   }
+  const email_encoded = Buffer.from(email).toString("base64")
   if (valid_name(name)) {
     if (
       validateEmail(email) &&
@@ -35,8 +36,8 @@ router.post("/create-user", async (req: Request, res: Response) => {
     ) {
       const hashed_pass = passwordHash.generate(password);
       const user_refresh = await generate_refresh();
-      const user_exists = await check_user_exists(email, name);
-      const new_jwt = await create_new_jwt_new_user(email, name);
+      const user_exists = await check_user_exists(email_encoded, name);
+      const new_jwt = await create_new_jwt_new_user(email_encoded, name);
       if (user_exists) {
         res.json({ success: false, message: "The user already exists." });
         return;
@@ -49,7 +50,7 @@ router.post("/create-user", async (req: Request, res: Response) => {
           [":NAME:", ":EMAIL:", ":HASH:", ":REFRESH:", ":JWT:", ":URL:"],
           [
             name,
-            email,
+            email_encoded,
             hashed_pass,
             user_refresh,
             new_jwt,
@@ -93,8 +94,9 @@ router.post("/login", async (req: Request, res: Response) => {
     res.json({ success: false, message: "Missing valid credentials." });
     return;
   }
+  const email_encoded = Buffer.from(email).toString("base64")
 
-  const user_exists = await check_user_exists_by_login(email);
+  const user_exists = await check_user_exists_by_login(email_encoded);
 
   if (!user_exists[0]) {
     res.json({ success: false, message: "The user does not exist." });
@@ -113,7 +115,7 @@ router.post("/login", async (req: Request, res: Response) => {
   await run_query(
     rep(
       [":NEW_JWT:", ":USER_EMAIL:"],
-      [new_jwt.new_jwt, email],
+      [new_jwt.new_jwt, email_encoded],
       "update_jwt.sql"
     )
   );

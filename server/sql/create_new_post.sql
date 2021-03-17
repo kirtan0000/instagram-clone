@@ -1,1 +1,1 @@
-INSERT INTO posts(id, image_id, title, author, timestamp) VALUES(:ID:, :IMG_URL:, :TITLE:, :USERNAME:, :TIMESTAMP:)
+INSERT INTO posts(id, image_id, title, author, timestamp) VALUES(':ID:', ':IMG_URL:', ':TITLE:', ':USERNAME:', ':TIMESTAMP:')

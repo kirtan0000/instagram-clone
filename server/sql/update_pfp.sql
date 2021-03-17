@@ -1,3 +1,3 @@
 UPDATE users
-SET pfp = :URI:
-WHERE username = :USERNAME:
+SET pfp = ':URI:'
+WHERE username = ':USERNAME:'

@@ -43,6 +43,7 @@ const MyAccount: React.FC = () => {
       const userInfo = await fetchUser.json()
       if (!userInfo.success) {
         handleError(userInfo.message)
+        return
       }
       if (userInfo.needs_new_jwt === true)
         localStorage.setItem('jwt_token', userInfo.jwt_token)

@@ -1,3 +1,3 @@
 SELECT *
 FROM pfps
-WHERE id = :ID:
+WHERE id = ':ID:'
