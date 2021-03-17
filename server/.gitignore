@@ -1,0 +1,6 @@
+.env
+node_modules/
+public/pfps/*
+public/posts/*
+!public/**/default.jpg
+dist/

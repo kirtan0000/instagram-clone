@@ -1,0 +1,31 @@
+.time-info-all {
+  color: grey;
+  margin-left: 10px;
+  margin-top: -64px;
+}
+
+#comment_img_all {
+  width: 57px; /* Class Doesn't Work With This Style */
+  height: 57px;
+  cursor: pointer;
+  margin-top: -93px;
+  margin-left: 70px;
+}
+
+#like_post_img_all {
+  position: relative;
+  width: 51px;
+  height: 51px;
+  cursor: pointer;
+  top: -10px;
+}
+
+.inf-all-post {
+  position: relative;
+  top: -34px;
+}
+
+.card_all {
+  width: 610px !important;
+  height: 890px !important;
+}

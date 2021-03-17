@@ -1,0 +1,368 @@
+body {
+  font-family: 'Helvetica Neue', 'proxima-nova', sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+hr {
+  border-top: 4.5px solid rgb(165, 165, 165);
+  border-radius: 7px;
+  margin: auto;
+}
+
+#user-head-name-me {
+  margin-left: 220px !important;
+}
+
+.user_post_p:nth-child(1) {
+  width: 380px;
+  left: 200px;
+  height: 420px;
+  margin-left: 4px;
+}
+
+.infoFolMe {
+  position: relative;
+  margin-left: 980px;
+  top: -60px;
+}
+
+.infoFolwMe {
+  position: relative;
+  margin-left: 1116px;
+  top: -76px;
+}
+
+.infoPostsMe {
+  margin-left: 1040px;
+  margin-top: -136px;
+}
+
+.head {
+  text-align: center;
+  margin: 33px;
+  padding-top: 25px;
+}
+
+#user_pfp {
+  position: relative;
+  border-radius: 60%;
+  width: 100px;
+  height: 100px;
+  margin-top: -100px;
+  margin-right: 260px;
+  float: center;
+  display: inline;
+}
+
+#showPfpModal {
+  position: relative;
+  width: 160px;
+  height: 30px;
+  font-size: 90%;
+  border: 0px solid black;
+  background-color: lightblue;
+  cursor: pointer;
+  left: 39%;
+  top: -20px;
+}
+
+/* The CSS Horrors */
+@media only screen and (max-width: 1700px) {
+  #showPfpModal {
+    left: 35%;
+  }
+  .infoFolMe {
+    margin-left: 830px;
+  }
+
+  .infoPostsMe {
+    margin-left: 880px;
+  }
+
+  .infoFolwMe {
+    margin-left: 955px;
+  }
+}
+
+@media only screen and (max-width: 1580px) {
+  #showPfpModal {
+    left: 36%;
+  }
+  .infoFolMe {
+    margin-left: 790px;
+  }
+
+  .infoPostsMe {
+    margin-left: 850px;
+  }
+  .infoFolwMe {
+    margin-left: 925px;
+  }
+}
+
+@media only screen and (max-width: 1490px) {
+  #showPfpModal {
+    left: 35%;
+  }
+  .infoFolMe {
+    margin-left: 750px;
+  }
+
+  .infoPostsMe {
+    margin-left: 810px;
+  }
+  .infoFolwMe {
+    margin-left: 885px;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  #showPfpModal {
+    left: 35%;
+  }
+  .infoFolMe {
+    margin-left: 740px;
+  }
+
+  .infoPostsMe {
+    margin-left: 800px;
+  }
+  .infoFolwMe {
+    margin-left: 875px;
+  }
+}
+
+@media only screen and (max-width: 1410px) {
+  #showPfpModal {
+    left: 33%;
+  }
+  .infoFolMe {
+    margin-left: 710px;
+  }
+
+  .infoPostsMe {
+    margin-left: 760px;
+  }
+  .infoFolwMe {
+    margin-left: 835px;
+  }
+}
+
+@media only screen and (max-width: 1340px) {
+  #showPfpModal {
+    left: 34%;
+  }
+  .infoFolMe {
+    margin-left: 690px;
+  }
+
+  .infoPostsMe {
+    margin-left: 750px;
+  }
+  .infoFolwMe {
+    margin-left: 815px;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #showPfpModal {
+    left: 32%;
+  }
+  .infoFolMe {
+    margin-left: 640px;
+  }
+
+  .infoPostsMe {
+    margin-left: 710px;
+  }
+  .infoFolwMe {
+    margin-left: 785px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #showPfpModal {
+    left: 29%;
+  }
+  .infoFolMe {
+    margin-left: 560px;
+  }
+
+  .infoPostsMe {
+    margin-left: 620px;
+  }
+  .infoFolwMe {
+    margin-left: 705px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  #showPfpModal {
+    left: 28%;
+  }
+  .infoFolMe {
+    margin-left: 530px;
+  }
+
+  .infoPostsMe {
+    margin-left: 590px;
+  }
+  .infoFolwMe {
+    margin-left: 665px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  #showPfpModal {
+    left: 26.4%;
+  }
+  .infoFolMe {
+    margin-left: 490px;
+  }
+
+  .infoPostsMe {
+    margin-left: 560px;
+  }
+  .infoFolwMe {
+    margin-left: 645px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #showPfpModal {
+    left: 24%;
+  }
+  .infoFolMe {
+    margin-left: 460px;
+  }
+
+  .infoPostsMe {
+    margin-left: 530px;
+  }
+  .infoFolwMe {
+    margin-left: 605px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  #showPfpModal {
+    left: 24%;
+  }
+  .infoFolMe {
+    margin-left: 470px;
+  }
+
+  .infoPostsMe {
+    margin-left: 530px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  #showPfpModal {
+    left: 21%;
+  }
+  .infoFolMe {
+    margin-left: 420px;
+  }
+
+  .infoPostsMe {
+    margin-left: 520px;
+  }
+  .infoFolwMe {
+    margin-left: 585px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  #showPfpModal {
+    left: 19.5%;
+  }
+  .infoFolMe {
+    margin-left: 370px;
+  }
+
+  .infoPostsMe {
+    margin-left: 440px;
+  }
+  .infoFolwMe {
+    margin-left: 535px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  #showPfpModal {
+    left: 17.6%;
+  }
+  .infoFolMe {
+    margin-left: 330px;
+  }
+
+  .infoPostsMe {
+    margin-left: 380px;
+  }
+  .infoFolwMe {
+    margin-left: 455px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #showPfpModal {
+    left: 13%;
+  }
+  .infoFolwMe {
+    margin-left: 445px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  #showPfpModal {
+    left: 10%;
+  }
+  .infoFolMe {
+    margin-left: 290px;
+  }
+
+  .infoPostsMe {
+    margin-left: 350px;
+  }
+  .infoFolwMe {
+    margin-left: 415px;
+  }
+}
+@media only screen and (max-width: 530px) {
+  #showPfpModal {
+    left: 6%;
+  }
+  .infoFolMe {
+    margin-left: 260px;
+  }
+
+  .infoPostsMe {
+    margin-left: 320px;
+  }
+  .infoFolwMe {
+    margin-left: 395px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .infoFolwMe {
+    margin-left: 250px;
+    margin-top: 75px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #showPfpModal {
+    left: 1%;
+  }
+
+  .infoFolMe {
+    margin-left: 220px;
+  }
+
+  .infoPostsMe {
+    margin-left: 270px;
+  }
+  .infoFolwMe {
+    margin-left: 220px;
+    margin-top: 75px;
+  }
+}

@@ -1,0 +1,225 @@
+body {
+  font-family: Arial, Helvetica, sans-serif, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#err {
+  position: relative;
+  top: 10px;
+  color: rgb(255, 0, 0);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin: 7px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+input:hover {
+  opacity: 0.8;
+}
+
+#form {
+  width: 60%;
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.4s;
+}
+
+#heading-acc-manage {
+  text-align: center;
+}
+
+.centeredForm {
+  margin: 20px;
+  margin-bottom: 40px;
+  padding: 40px 10px;
+  margin-top: -60px;
+  border-radius: 10px;
+  transition: all 0.4s;
+  background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 768px) {
+  #form {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+#message-fire-ui {
+  margin: auto;
+  text-align: center !important;
+  position: relative;
+  top: -5px;
+  left: 40px;
+  font-size: 22px;
+}
+
+#showPass {
+  position: relative;
+  left: -25vh;
+  top: -33px;
+  z-index: 1;
+  max-width: 100%;
+  display: block;
+}
+
+#showPass:focus {
+  outline: 0;
+}
+
+#showPass:after {
+  content: none;
+}
+
+/* The CSS Horros begin here */
+@media only screen and (max-width: 1800px) {
+  #showPass {
+    left: -18vh;
+  }
+}
+@media only screen and (max-width: 1650px) {
+  #showPass {
+    left: -16vh;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  #showPass {
+    left: -14vh;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  #showPass {
+    left: -11.4vh;
+  }
+}
+@media only screen and (max-width: 1420px) {
+  #showPass {
+    left: -10vh;
+  }
+}
+@media only screen and (max-width: 1395px) {
+  #showPass {
+    left: -8vh;
+  }
+}
+@media only screen and (max-width: 1315px) {
+  #showPass {
+    left: -6.5vh;
+  }
+}
+@media only screen and (max-width: 1285px) {
+  #showPass {
+    left: -3vh;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #showPass {
+    left: -1vh;
+  }
+}
+
+@media only screen and (max-width: 1101px) {
+  #showPass {
+    left: 1vh;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  #showPass {
+    left: 3vh;
+  }
+}
+@media only screen and (max-width: 970px) {
+  #showPass {
+    left: 5vh;
+  }
+}
+@media only screen and (max-width: 930px) {
+  #showPass {
+    left: 7.3vh;
+  }
+}
+@media only screen and (max-width: 850px) {
+  #showPass {
+    left: 9.3vh;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  #showPass {
+    position: relative;
+    left: 11vh;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  #showPass {
+    position: relative;
+    left: 10vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #showPass {
+    position: relative;
+    left: 12vh;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  #showPass {
+    position: relative;
+    left: 15vh;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  #showPass {
+    position: relative;
+    left: 9vh;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #showPass {
+    position: relative;
+    left: 10vh;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  #showPass {
+    position: relative;
+    left: 4vh;
+    top: 4px;
+  }
+}
+
+::-webkit-input-placeholder {
+  background: -webkit-linear-gradient(
+    -80deg,
+    var(--start-color),
+    var(--end-color)
+  );
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  --start-color: #14330e;
+  --end-color: #5cff77;
+}

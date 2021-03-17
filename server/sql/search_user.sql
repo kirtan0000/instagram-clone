@@ -1,0 +1,1 @@
+SELECT pfp, username FROM users WHERE username LIKE :QUERY:

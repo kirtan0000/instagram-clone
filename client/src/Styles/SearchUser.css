@@ -1,0 +1,44 @@
+#search_user {
+  position: relative;
+  width: 85% !important;
+}
+
+#results-not-found-search {
+  text-align: center;
+  color: red;
+}
+
+.user_name_search {
+  font-size: 122%;
+}
+
+
+
+#search-user-btn {
+  position: relative;
+  float: right;
+  margin-top: 10px;
+  width: 14.5%;
+  margin-right: 7px;
+}
+
+.user-search-inf-result {
+  margin-top: 20px;
+}
+@media only screen and (max-width: 1500px) {
+  #search_user {
+    width: 75% !important;
+  }
+  #search-user-btn {
+    width: 23.5%;
+    margin-top: 7px;
+    left: 1px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #search-user-btn {
+    width: 22.5%;
+    top: 0px !important;
+  }
+}

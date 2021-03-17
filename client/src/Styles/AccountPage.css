@@ -1,0 +1,96 @@
+.view-account > body {
+  font-family: 'Helvetica Neue', 'proxima-nova', sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.user_post:nth-child(1) {
+  width: 380px;
+  left: 200px;
+  height: 420px;
+  margin-left: 4px;
+}
+
+.view-account > .head_user {
+  text-align: center;
+  margin: 33px;
+  padding-top: 30px;
+  margin-top: -10px;
+}
+
+#user_pfp_other {
+  margin-right: 355px;
+  width: 80px;
+  height: 80px;
+  border-radius: 60%;
+  margin-top: -50px;
+}
+
+#follow-user {
+  position: relative;
+  left: -175px;
+  margin-top: -50px;
+}
+
+.followers-count-self {
+  margin-top: -30px;
+  margin-left: -60px;
+}
+
+.infoFol {
+  margin-left: -70px;
+}
+
+.infoPosts {
+  margin-left: 160px;
+  margin-top: -75px;
+}
+
+#user-name-inf_ {
+  margin-left: 53px;
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 590px) {
+  #follow-user {
+    position: relative;
+    left: 5px;
+    margin-top: -320px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  #user-name-inf_ {
+    margin-left: 0px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  #user-name-inf_ {
+    margin-left: 20px;
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #user-name-inf_ {
+    margin-left: 40px;
+    font-size: 23px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  #user-name-inf_ {
+    margin-left: 70px;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  #user_pfp {
+    margin-right: 410px;
+    width: 90px;
+    height: 90px;
+    border-radius: 60%;
+  }
+}

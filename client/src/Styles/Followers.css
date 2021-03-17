@@ -1,0 +1,13 @@
+.pfp {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.followerName {
+  font-size: 2em;
+}
+
+hr {
+  margin-top: 20px;
+}

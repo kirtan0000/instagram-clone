@@ -1,0 +1,1 @@
+SELECT to_ FROM followers WHERE from_ = :USERNAME:

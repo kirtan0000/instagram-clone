@@ -1,0 +1,33 @@
+#upload-head {
+  text-align: center;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  font-size: 3.3em;
+  margin: 0;
+}
+
+label {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+input {
+  border-radius: 40px;
+}
+
+input[type='file'] {
+  padding-top: 7px;
+  height: 50px;
+}
+
+.full-center {
+  margin-top: 90px;
+}
+
+#post-btn {
+  position: fixed;
+  font-size: 140%;
+  margin-top: 50px;
+  left: 16%;
+  width: 70%;
+}
