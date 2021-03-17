@@ -4,12 +4,12 @@
 
 #### Frontend:
 
-* React
-* FireUI
-* React Bootstrap
+- React
+- FireUI
+- React Bootstrap
 
 #### Backend
 
-* Express
-* Multer
-* MySQL
+- Express
+- Multer
+- MySQL
