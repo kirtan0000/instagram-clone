@@ -44,7 +44,7 @@ router.post("/create-user", async (req: Request, res: Response) => {
       }
       const defaultPfp = `${req.secure ? "https:" : "http:"}//${req.get(
         "host"
-      )}/pfps/default`;
+      )}${req.get("host") === "localhost:3034" ? "/pfps/default" : "/api/pfps/default"}`;
       await run_query(
         rep(
           [":NAME:", ":EMAIL:", ":HASH:", ":REFRESH:", ":JWT:", ":URL:"],
