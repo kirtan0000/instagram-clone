@@ -16,7 +16,11 @@ const MyFeed: React.FC = () => {
 
   var jwt_token = localStorage.getItem('jwt_token') || ''
   var refresh_token = localStorage.getItem('refresh_token') || ''
-
+  if (
+    localStorage.getItem('jwt_token') === null ||
+    localStorage.getItem('refresh_token') === null
+  )
+    window.location.href = '../login'
   useEffect(() => {
     Dark()
     document.title = 'My Feed | Instagram Clone'

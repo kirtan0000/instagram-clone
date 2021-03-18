@@ -59,6 +59,9 @@ var MyFeed = function () {
     var _a = react_1.useState([]), allPosts = _a[0], setAllPosts = _a[1];
     var jwt_token = localStorage.getItem('jwt_token') || '';
     var refresh_token = localStorage.getItem('refresh_token') || '';
+    if (localStorage.getItem('jwt_token') === null ||
+        localStorage.getItem('refresh_token') === null)
+        window.location.href = '../login';
     react_1.useEffect(function () {
         Dark_1["default"]();
         document.title = 'My Feed | Instagram Clone';
