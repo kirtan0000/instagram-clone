@@ -118,15 +118,16 @@ router.post("/change-pfp", async (req: Request, res: Response) => {
   }
 
   const pfpUri = Buffer.from(
-    `${req.secure ? "https:" : "http:"}//${req.get("host")}/pfps/${id}`
+    `${req.secure ? "https:" : "http:"}
+    //
+    ${req.get("host")}/${
+      req.get("host") === "localhost:3034" ? `` : `api/`
+    }pfps/${id}`
   ).toString("base64");
-
   await run_query(
     rep([":URI:", ":USERNAME:"], [pfpUri, user_name], "update_pfp.sql")
   );
-  await run_query(
-    rep([":ID:"], [imageExists[0].id], "delete_temp_pfp.sql")
-  );
+  await run_query(rep([":ID:"], [imageExists[0].id], "delete_temp_pfp.sql"));
 
   !needs_new_jwt[0]
     ? res.json({
