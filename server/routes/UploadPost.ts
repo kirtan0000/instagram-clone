@@ -53,8 +53,8 @@ router.post("/upload-post-image", async (req: Request, res: Response) => {
   upload(req, res, async () => {
     try {
       await fs.renameSync(
-        path.join(__dirname, `..\\tmp\\posts\\${uuidFile}`),
-        path.join(__dirname, `..\\public\\posts\\${uuidFile}`)
+        path.join(__dirname, `../tmp/posts/${uuidFile}`),
+        path.join(__dirname, `../public/posts/${uuidFile}`)
       );
     } catch (error) {
       res.json({
@@ -62,7 +62,7 @@ router.post("/upload-post-image", async (req: Request, res: Response) => {
         message: "An unknown error occured.",
       });
 
-      await fs.unlinkSync(path.join(__dirname, `..\\tmp\\posts\\${uuidFile}`));
+      await fs.unlinkSync(path.join(__dirname, `../tmp/posts/${uuidFile}`));
       return;
     }
     const imgUri = `${req.secure ? "https:" : "http:"}//${req.get(

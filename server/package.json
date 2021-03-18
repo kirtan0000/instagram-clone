@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon index.ts",
-    "prod": "NODE_ENV=production pm2 start index.ts --watch"
+    "prod": "NODE_ENV=production pm2 start index.ts"
   },
   "keywords": [],
   "author": "",

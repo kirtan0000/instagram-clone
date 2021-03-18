@@ -52,8 +52,8 @@ router.post("/upload-pfp", async (req: Request, res: Response) => {
   upload(req, res, async () => {
     try {
       await fs.renameSync(
-        path.join(__dirname, `..\\tmp\\pfps\\${uuidFile}`),
-        path.join(__dirname, `..\\public\\pfps\\${uuidFile}`)
+        path.join(__dirname, `../tmp/pfps/${uuidFile}`),
+        path.join(__dirname, `../public/pfps/${uuidFile}`)
       );
       await run_query(
         rep(
@@ -68,7 +68,7 @@ router.post("/upload-pfp", async (req: Request, res: Response) => {
         message: "An unknown error occured.",
       });
 
-      await fs.unlinkSync(path.join(__dirname, `..\\tmp\\pfps\\${uuidFile}`));
+      await fs.unlinkSync(path.join(__dirname, `../tmp/pfps/${uuidFile}`));
       return;
     }
     res.json({
