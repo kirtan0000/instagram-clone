@@ -65,9 +65,9 @@ router.post("/upload-post-image", async (req: Request, res: Response) => {
       await fs.unlinkSync(path.join(__dirname, `../tmp/posts/${uuidFile}`));
       return;
     }
-    const imgUri = `${req.secure ? "https:" : "http:"}//${req.get(
-      "host"
-    )}/posts/${uuidFile.split(".")[0]}.jpg`;
+    const imgUri = `${req.secure ? "https:" : "http:"}//${req.get("host")}/${
+      req.get("host") === "localhost:3034" ? `` : `api/`
+    }posts/${uuidFile.split(".")[0]}.jpg`;
     res.json({
       success: true,
       message: "Success",
