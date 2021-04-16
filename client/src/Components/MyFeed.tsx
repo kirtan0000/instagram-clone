@@ -184,8 +184,10 @@ const MyFeed: React.FC = () => {
                           : `${post.comment_count} comments`}
                       </h3>
                     </div>
-                    <br />
-                    <span className='time-info-all'>Posted on {post.date}</span>
+                    <div style={{ paddingTop: 10 }} className='time-info-all'>
+                      <hr id="sep-time-to-img" style={{ paddingBottom: 10 }} />
+                      <span>Posted on {post.date}</span>
+                    </div>
                   </div>
                   <br />
                 </div>

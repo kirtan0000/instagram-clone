@@ -8,7 +8,7 @@
   width: 57px; /* Class Doesn't Work With This Style */
   height: 57px;
   cursor: pointer;
-  margin-top: -110px !important;
+  margin-top: -113px !important;
   margin-left: 70px !important;
 }
 
@@ -28,5 +28,4 @@
 .card_all {
   width: 610px !important;
   height: 890px !important;
-  font-size: 173%;
 }

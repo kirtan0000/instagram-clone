@@ -133,10 +133,10 @@ const Post: React.FC = () => {
     if (
       commentInput === '' ||
       !commentInput.replace(/\s/g, '').length ||
-      commentInput.length < 4
+      commentInput.length < 1
     ) {
       handleError(
-        'The comment must have 4 or more characters.',
+        'The comment must have 1 or more characters.',
         'Invalid Comment',
         false
       )
@@ -248,8 +248,10 @@ const Post: React.FC = () => {
                       : `${commentAmount} comments`}
                   </h3>
                 </div>
-                <br />
-                <span className='time-info'>Posted on {timestamp}</span>
+                <div style={{ paddingTop: 40 }} className='time-info-all'>
+                  <hr id='sep-time-to-img' style={{ paddingBottom: 0 }} />
+                  <span>Posted on {timestamp}</span>
+                </div>
               </div>
             </div>
           </div>

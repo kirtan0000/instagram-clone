@@ -11,7 +11,7 @@
   width: 51px;
   height: 51px;
   cursor: pointer;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 #comment_img {
@@ -150,7 +150,6 @@
   left: 110%;
   top: -2%;
   margin: 40px;
-  font-size: 173%;
 }
 
 #comment-inp {
@@ -191,7 +190,7 @@
 }
 
 #post_img_single {
-  margin-top: -13px;
+  margin-top: -23px !important;
   height: 60%;
 }
 
@@ -199,6 +198,7 @@
   border-bottom: 0px solid black !important;
   margin-bottom: -2px !important;
   padding-top: 0px !important;
+  font-size: 190% !important;
 }
 
 #authorPostPfp {
@@ -221,6 +221,7 @@
   color: grey;
   margin-left: 10px;
   margin-top: -40px;
+  font-size: 80%;
 }
 
 #sep-img-to-title {
@@ -232,15 +233,24 @@
   margin-left: 10px;
 }
 
+#sep-time-to-img {
+  color: black;
+  border-top: 10px;
+  border-top: 2.5px solid rgb(129, 129, 129);
+  border-radius: 4%;
+  width: 103.5%;
+  margin-left: -15px;
+}
+
 @media only screen and (max-width: 1400px) {
   .card {
-    left: 24%;
+    left: 74%;
   }
 }
 
 @media only screen and (max-width: 1140px) {
   .card {
-    left: 17%;
+    left: 40%;
   }
 }
 
@@ -295,9 +305,9 @@
 
 @media only screen and (max-width: 360px) {
   .card {
-    width: 280px !important;
+    width: 190px !important;
     top: 5%;
-    left: 7%;
+    left: -30%;
   }
 }
 @media only screen and (max-height: 700px) {

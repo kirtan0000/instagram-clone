@@ -30,11 +30,11 @@ router.post("/comment/:id", async (req: Request, res: Response) => {
   if (
     content === "" ||
     !content.replace(/\s/g, "").length ||
-    content.length < 4
+    content.length < 1
   ) {
     res.json({
       success: false,
-      message: "The comment must have 4 or more characters.",
+      message: "The comment must have 1 or more characters.",
     });
     return;
   }
