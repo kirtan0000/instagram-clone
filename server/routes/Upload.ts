@@ -68,7 +68,6 @@ router.post("/upload-pfp", async (req: Request, res: Response) => {
         message: "An unknown error occured.",
       });
 
-      await fs.unlinkSync(path.join(__dirname, `../tmp/pfps/${uuidFile}`));
       return;
     }
     res.json({
@@ -118,11 +117,7 @@ router.post("/change-pfp", async (req: Request, res: Response) => {
   }
 
   const pfpUri = Buffer.from(
-    `${req.secure ? "https:" : "http:"}
-    //
-    ${req.get("host")}/${
-      req.get("host") === "localhost:3034" ? `` : `api/`
-    }pfps/${id}`
+    `${req.secure ? "https:" : "http:"}//${req.get("host")}/${req.get("host") === "localhost:3034" ? `` : `api/`}pfps/${id}`
   ).toString("base64");
   await run_query(
     rep([":URI:", ":USERNAME:"], [pfpUri, user_name], "update_pfp.sql")
