@@ -13,6 +13,8 @@ import Post from './Components/Post'
 import Redirect from './Util/Redirect'
 import SearchUser from './Components/SearchUser'
 import MyFeed from './Components/MyFeed'
+import Chat from './Components/Chat'
+import Chats from './Components/Chats'
 
 const App: React.FC = () => {
   return (
@@ -28,6 +30,8 @@ const App: React.FC = () => {
         <Route path='/followers/:name' component={ShowFollowers} exact />
         <Route path='/following/:name' component={ShowFollowing} exact />
         <Route path='/search/users/' component={SearchUser} exact />
+        <Route path='/chat/' component={Chat} exact />
+        <Route path='/chats/:name' component={Chats} exact />
 
         {/* Redirects */}
         <Route
@@ -69,6 +73,15 @@ const App: React.FC = () => {
         <Route
           path='/su'
           component={() => <Redirect url={`../search/users/`} />}
+          exact
+        />
+        <Route
+          path='/c/:name'
+          component={() => (
+            <Redirect
+              url={`../chats/${window.location.pathname.split('/')[2]}`}
+            />
+          )}
           exact
         />
         {/* 404 */}

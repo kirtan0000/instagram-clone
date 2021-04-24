@@ -6,6 +6,7 @@ import Dark from '../Util/Dark'
 import { Link } from 'react-router-dom'
 import handleError from '../Util/HandleError'
 import EditFavicon from '../Util/EditFavicon'
+import handleLogout from '../Util/Logout'
 
 const Account: React.FC = () => {
   const [name, changeName] = useState('')
@@ -141,6 +142,15 @@ const Account: React.FC = () => {
           </Link>
           <Link className='topnav-item' to='/search/users'>
             Search For Users
+          </Link>
+          <Link
+            className='topnav-item'
+            to={isSelf || !isFollowing ? '/chat' : `/chats/${name}`}
+          >
+            {!isSelf && isFollowing ? `Chat with ${name}` : 'View Chats'}
+          </Link>
+          <Link className='topnav-item' to='#' onClick={handleLogout}>
+            Logout
           </Link>
         </div>
         <div className='head_user'>

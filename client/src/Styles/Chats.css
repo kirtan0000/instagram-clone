@@ -1,0 +1,75 @@
+body {
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.user_pfp_chat {
+  float: left;
+  margin-top: -24px;
+}
+
+.user_name_chat {
+  position: relative;
+  margin-top: 30px;
+  left: 6px;
+  font-weight: bold;
+}
+
+.chat-content {
+  position: relative;
+  margin-left: 90px;
+  top: -20px;
+}
+
+#send-chat {
+  position: fixed !important;
+  width: 90% !important;
+  height: 5% !important;
+  top: 93% !important;
+  font-size: 2vh !important;
+}
+
+.send-chat-btn {
+  position: fixed !important;
+  left: 90.4% !important;
+  height: 5% !important;
+  top: 93.5% !important;
+  width: 9%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .send-chat-btn {
+    left: 90% !important;
+    width: 9%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #send-chat {
+    width: 70% !important;
+    left: 0%;
+    font-size: 1.3vh !important;
+  }
+  .send-chat-btn {
+    left: 72% !important;
+    width: 24%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #send-chat {
+    width: 70% !important;
+    left: 0%;
+    font-size: 1.3vh !important;
+  }
+  .send-chat-btn {
+    left: 72% !important;
+    width: 24%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .send-chat-btn {
+    font-size: 0.7vh;
+  }
+}

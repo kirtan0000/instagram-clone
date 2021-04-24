@@ -9,6 +9,7 @@ import EditFavicon from '../Util/EditFavicon'
 import not_liked from '../Images/like.png'
 import liked from '../Images/filled-like.png'
 import comment from '../Images/comment.png'
+import handleLogout from '../Util/Logout'
 
 const Post: React.FC = () => {
   const [title, changeTitle] = useState('')
@@ -197,6 +198,12 @@ const Post: React.FC = () => {
         </Link>
         <Link className='topnav-item' to='/search/users'>
           Search For Users
+        </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
+        </Link>
+        <Link className='topnav-item' to='#' onClick={handleLogout}>
+          Logout
         </Link>
       </div>
       <div className='container'>

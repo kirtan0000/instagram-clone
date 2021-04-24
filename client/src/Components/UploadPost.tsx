@@ -7,6 +7,7 @@ import '../Styles/UploadPost.css'
 import { Link } from 'react-router-dom'
 import handleError from '../Util/HandleError'
 import EditFavicon from '../Util/EditFavicon'
+import handleLogout from '../Util/Logout'
 
 const UploadPost: React.FC = () => {
   const [current_title, setCurrentTitle] = useState('')
@@ -96,6 +97,12 @@ const UploadPost: React.FC = () => {
         </Link>
         <Link className='topnav-item' to='/search/users'>
           Search For Users
+        </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
+        </Link>
+        <Link className='topnav-item' to='#' onClick={handleLogout}>
+          Logout
         </Link>
       </div>
       <div className='box box-shadow full-center'>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../Styles/NotFound.css'
 import Dark from '../Util/Dark'
 import EditFavicon from '../Util/EditFavicon'
+import handleLogout from '../Util/Logout'
 
 const NotFound: React.FC = () => {
   const [not_found_path, set_path] = useState('/')
@@ -31,6 +32,12 @@ const NotFound: React.FC = () => {
         </Link>
         <Link className='topnav-item' to='/search/users'>
           Search For Users
+        </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
+        </Link>
+        <Link className='topnav-item' to='#' onClick={handleLogout}>
+          Logout
         </Link>
       </div>
       <div className='not_found'>

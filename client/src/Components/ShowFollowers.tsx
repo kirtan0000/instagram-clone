@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import handleError from '../Util/HandleError'
 import '../Styles/Followers.css'
 import EditFavicon from '../Util/EditFavicon'
+import handleLogout from '../Util/Logout'
 
 const ShowFollowers: React.FC = () => {
   const [name, changeName] = useState('')
@@ -64,7 +65,7 @@ const ShowFollowers: React.FC = () => {
         <Link className='topnav-item' to='/'>
           Home
         </Link>
-                <Link className='topnav-item' to='/feed'>
+        <Link className='topnav-item' to='/feed'>
           My Feed
         </Link>
         <Link className='topnav-item' to={`/user/${name}`}>
@@ -72,6 +73,12 @@ const ShowFollowers: React.FC = () => {
         </Link>
         <Link className='topnav-item' to='/search/users'>
           Search For Users
+        </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
+        </Link>
+        <Link className='topnav-item' to='#' onClick={handleLogout}>
+          Logout
         </Link>
       </div>
       {followerCount === 0 ? (

@@ -10,6 +10,7 @@ import not_liked from '../Images/like.png'
 import liked from '../Images/filled-like.png'
 import comment from '../Images/comment.png'
 import '../Styles/MyFeed.css'
+import handleLogout from '../Util/Logout'
 
 const MyFeed: React.FC = () => {
   const [allPosts, setAllPosts] = useState([])
@@ -124,6 +125,12 @@ const MyFeed: React.FC = () => {
         <Link className='topnav-item' to='/search/users'>
           Search For Users
         </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
+        </Link>
+        <Link className='topnav-item' to='#' onClick={handleLogout}>
+          Logout
+        </Link>
       </div>
       {allPosts.map((post, index) => (
         <>
@@ -185,7 +192,7 @@ const MyFeed: React.FC = () => {
                       </h3>
                     </div>
                     <div style={{ paddingTop: 10 }} className='time-info-all'>
-                      <hr id="sep-time-to-img" style={{ paddingBottom: 10 }} />
+                      <hr id='sep-time-to-img' style={{ paddingBottom: 10 }} />
                       <span>Posted on {post.date}</span>
                     </div>
                   </div>

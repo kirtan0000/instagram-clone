@@ -7,6 +7,7 @@ import Dark from '../Util/Dark'
 import handleError from '../Util/HandleError'
 import { Link } from 'react-router-dom'
 import EditFavicon from '../Util/EditFavicon'
+import handleLogout from '../Util/Logout'
 
 const MyAccount: React.FC = () => {
   const [name, changeName] = useState('')
@@ -111,33 +112,7 @@ const MyAccount: React.FC = () => {
       localStorage.setItem('jwt_token', change_pfp_data.jwt_token)
     setPfpUrl(change_pfp_data.url)
   }
-  const handleLogout = () => {
-    confirmAlert({
-      title: 'Are you sure?',
-      message: 'Are you sure that you want to logout?',
-      buttons: [
-        {
-          label: 'No',
-          onClick: () => {}
-        },
-        {
-          label: 'Yes',
-          onClick: () => {
-            localStorage.removeItem('jwt_token')
-            localStorage.removeItem('refresh_token')
-            window.location.href = `../login`
-          }
-        }
-      ],
-      childrenElement: () => <div />,
-      closeOnEscape: false,
-      closeOnClickOutside: false,
-      willUnmount: () => {},
-      onClickOutside: () => {},
-      onKeypressEscape: () => {},
-      overlayClassName: 'overlay-custom-class-name'
-    })
-  }
+
   return (
     <>
       <div className='topnav theme-reverse topnav-shadow'>
@@ -154,6 +129,9 @@ const MyAccount: React.FC = () => {
         </Link>
         <Link className='topnav-item' to='/search/users'>
           Search For Users
+        </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
         </Link>
         <Link className='topnav-item' to='#' onClick={handleLogout}>
           Logout

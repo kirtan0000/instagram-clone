@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import '../Styles/SearchUser.css'
 import handleError from '../Util/HandleError'
 import EditFavicon from '../Util/EditFavicon'
+import handleLogout from '../Util/Logout'
 
 const SearchUser: React.FC = () => {
   const [searchVal, setSearchVal] = useState('')
@@ -55,6 +56,12 @@ const SearchUser: React.FC = () => {
         </Link>
         <Link className='topnav-item' to='/upload-post'>
           Create Post
+        </Link>
+        <Link className='topnav-item' to='/chat'>
+          Chat
+        </Link>
+        <Link className='topnav-item' to='#' onClick={handleLogout}>
+          Logout
         </Link>
       </div>
       <input

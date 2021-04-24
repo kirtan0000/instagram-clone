@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import '../Styles/AccountPage.css'
 import URL from '../Util/API_BASE'
-import 'react-confirm-alert/src/react-confirm-alert.css'
 import Dark from '../Util/Dark'
 import { Link } from 'react-router-dom'
 import handleError from '../Util/HandleError'
-import '../Styles/Followers.css'
-import EditFavicon from '../Util/EditFavicon'
 import handleLogout from '../Util/Logout'
 
-const ShowFollowing: React.FC = () => {
-  const [name, changeName] = useState('')
+const Chat: React.FC = () => {
   const [following, setFollowing] = useState([])
   const [followingCount, setFollowingCount] = useState(0)
-  EditFavicon('/favicon.ico')
-
-  document.title = "User's Following | Instagram Clone"
 
   if (
     localStorage.getItem('jwt_token') === null ||
@@ -23,17 +15,39 @@ const ShowFollowing: React.FC = () => {
   )
     window.location.href = '../login'
 
+  var jwt_token = localStorage.getItem('jwt_token') || ''
+  var refresh_token = localStorage.getItem('refresh_token') || ''
+
   useEffect(() => {
+    document.title = 'Chat | Instagram Clone'
     Dark()
     async function getUserFollowing () {
-      const fetchUserFollowing = await fetch(
-        `${URL}/get-user-following/${window.location.pathname.split('/')[2]}`
-      )
-      const userInfo = await fetchUserFollowing.json()
+      const userInfoParams = new URLSearchParams()
+      userInfoParams.append('jwt_token', jwt_token)
+      userInfoParams.append('refresh_token', refresh_token)
+
+      const fetchUser = await fetch(`${URL}/get-my-info`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: userInfoParams,
+        redirect: 'follow'
+      })
+      const userInfo = await fetchUser.json()
       if (!userInfo.success) {
         handleError(userInfo.message)
+        return
       }
-      if (!userInfo.exists) {
+      if (userInfo.needs_new_jwt === true)
+        localStorage.setItem('jwt_token', userInfo.jwt_token)
+
+      const fetchUserFollowing = await fetch(
+        `${URL}/get-user-following/${userInfo.user_name}`
+      )
+      const userInfoFol = await fetchUserFollowing.json()
+      if (!userInfoFol.success) {
+        handleError(userInfoFol.message)
+      }
+      if (!userInfoFol.exists) {
         document.title = 'User Not Found | Instagram Clone'
         handleError(
           'The user does not exist',
@@ -43,17 +57,12 @@ const ShowFollowing: React.FC = () => {
         )
         return
       }
-      if (userInfo.needs_new_jwt === true)
-        localStorage.setItem('jwt_token', userInfo.jwt_token)
-      changeName(window.location.pathname.split('/')[2])
-      setFollowing(userInfo.following)
-      setFollowingCount(userInfo.count)
+
+      setFollowing(userInfoFol.following)
+      setFollowingCount(userInfoFol.count)
     }
     getUserFollowing()
   }, [])
-  document.title = `${name} is following ${
-    followingCount !== 1 ? `${followingCount} people` : '1 person'
-  }| Instagram Clone`
   return (
     <>
       <div className='topnav theme-reverse topnav-shadow'>
@@ -65,36 +74,23 @@ const ShowFollowing: React.FC = () => {
         <Link className='topnav-item' to='/'>
           Home
         </Link>
-        <Link className='topnav-item' to='/feed'>
-          My Feed
-        </Link>
-        <Link className='topnav-item' to={`/user/${name}`}>
-          View {name}'s Profile
+        <Link className='topnav-item' to='/upload-post'>
+          Create Post
         </Link>
         <Link className='topnav-item' to='/search/users'>
           Search For Users
         </Link>
-        <Link className='topnav-item' to='/chat'>
-          Chat
+        <Link className='topnav-item' to='/feed'>
+          My Feed
         </Link>
         <Link className='topnav-item' to='#' onClick={handleLogout}>
           Logout
         </Link>
       </div>
-      {followingCount === 0 ? (
-        <>
-          <br />
-          <h3>{name} doesn't appear to follow anyone yet :(.</h3>
-        </>
-      ) : (
-        <>
-          <h1>
-            {name} is following{' '}
-            {followingCount !== 1 ? `${followingCount} people` : '1 person'}:
-          </h1>
-          <br />
-        </>
-      )}
+      <h1>
+        Total: {followingCount} {followingCount === 1 ? 'chat' : 'chats'}
+      </h1>
+      <br />
       {following.map(following => (
         <>
           <div className='followingInfo'>
@@ -108,7 +104,7 @@ const ShowFollowing: React.FC = () => {
 
             <span className='followingName'>
               &nbsp;
-              <Link to={`/user/${following['username']}`}>
+              <Link to={`/chats/${following['username']}`}>
                 {following['username']}
               </Link>
             </span>
@@ -120,4 +116,4 @@ const ShowFollowing: React.FC = () => {
   )
 }
 
-export default ShowFollowing
+export default Chat
