@@ -20,7 +20,10 @@ const Chats: React.FC = () => {
   var jwt_token = localStorage.getItem('jwt_token') || ''
   var refresh_token = localStorage.getItem('refresh_token') || ''
   var user_to = window.location.pathname.split('/')[2]
-  const socket = socketClient(URL, { transports: ['websocket'] })
+  const socket = socketClient(`${URL}/../`, {
+    transports: ['websocket'],
+    path: '/api/chats/socket.io'
+  })
 
   useEffect(() => {
     let myName = ''
@@ -54,6 +57,7 @@ const Chats: React.FC = () => {
       myName = chatsAll.user_name
     }
     getUserChats()
+
     socket.on('new_message', (data: any) => {
       if (
         (data.to === user_to && data.from === myName) ||

@@ -12,7 +12,8 @@ const app = express();
 const server = http.createServer(app);
 const port = 3034;
 const io = socketIo(server, {
-  allowEIO3: true, // Fix unsupported protocl error
+  allowEIO3: true, // Fix unsupported protocol error,
+  path: "/chats/socket.io",
 });
 
 io.on("connection", (socket: any) => {
